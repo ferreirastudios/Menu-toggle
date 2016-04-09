@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>  
+  <meta charset="UTF-8">
+  <title>Aula Menu Toggle</title>
+
+  <style>
+
+    #nav-btn {
+      position: fixed;
+      border: #Bababa 1px solid;
+      border-radius: 2px;
+      padding: 5px 10px;
+      cursor: pointer;
+      background-color: #fff;
+      transition: all 0.4s linear;
+    }
+
+    #nav-btn:hover {
+      border: #0061f2 1px solid;
+    }
+
+    #nav-btn > div {
+      width: 20px;
+      height: 3px;
+      background: #bababa;
+      margin: 4px 0px;
+      transition: all 0.4s linear;
+    }
+
+    #nav-btn:hover div {
+      background: #0061f2;
+    }
+
+    #nav-slide {
+      position: fixed;
+      left: -250px;
+      top: 60px;
+      width: 250px;
+      height: 0px;
+      background: #cdcdcd;
+      transition: left 0.4s linear;
+    }
+
+  </style>
+
+  <script>
+
+    function slidetoggle() {
+      var slider = document.getElementById("nav-slide");
+      slider.style.height = window.innerHeight - 60 + "px";
+
+      if(slider.style.left == "0px") {
+        slider.style.left = "-250px";
+      }
+      else {
+        slider.style.left = "0px";
+      }
+    }
+
+  </script>
+
+</head>
+<body>
+
+<nav id="nav-btn" onclick="slidetoggle()">
+  <div></div>
+  <div></div>
+  <div></div>
+</nav>
+
+<section id="nav-slide">
+  <p>Link do menu</p>
+</section>
+
+</body>
+</html>
